@@ -1,1 +1,14 @@
-
+{
+  "manifest_version": 3,
+  "name": "Sayyad",
+  "version": "0.1",
+  "description": "Warns before you click a suspicious link. Everything runs in your browser.",
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["features.js", "model.js", "brands.js", "explain.js", "content.js"],
+    "css": ["fakh.css"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_popup": "popup.html" }
+}
