@@ -1,0 +1,25 @@
+# Safe
+http://www.google.com    Safe
+https://www.absher.sa    Safe
+https://tuwaiq.edu.sa    Safe
+https://dga.gov.sa       Safe
+https://www.moi.gov.sa   Safe
+https://www.moe.gov.sa   Safe
+https://www.hrsd.gov.sa  Safe
+https://www.mofa.gov.sa  Safe
+https://mod.gov.sa       Safe
+https://ta.sdaia.gov.sa  Safe
+https://www.amazon.sa    Safe
+
+# Phishing
+http://192.168.1.1/absher/login.php           Phishing
+http://absher-verify.xyz/confirm              Phishing
+https://absher.sa.account-check.com/login     Phishing
+http://www.absher-sa.com/signin               Phishing
+https://moi-gov-sa.security-update.net        Phishing
+http://saudipost-delivery.info/pay-fee        Phishing
+https://aramex-tracking.shipping-sa.xyz       Phishing
+http://alrajhi-bank.secure-login.top          Phishing
+https://www.google.com@phishing-site.ru       Phishing
+http://bit.ly/2xKpLmQ                         Phishing
+http://xn--absher-9db.com/login               Phishing
