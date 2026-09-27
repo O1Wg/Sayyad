@@ -1,5 +1,5 @@
 trainer/data/*.csv
-trainer/data*.arff
+trainer/data/*.arff
 trainer/models/
 trainer/*.class
 trainer/weka.jar
