@@ -3,7 +3,7 @@ import java.util.*;
 public class Features {
     public static final String[] NAMES = {
         "url_len", "host_len", "n_dots", "n_hyphens", "n_digits", "n_subdomains", "is_ip", "has_at",
-        "dbl_slash", "n_special", "is_https", "n_susp", "bad_tld", "shortener", "path_len",
+        "dbl_slash", "n_special", "n_susp", "bad_tld", "shortener", "path_len",
         "host_entropy", "digit_ratio_host"
     };
     static final String[] SUSP = {"login", "signin", "sign-in", "verify", "verification", "secure", "security",
@@ -15,11 +15,8 @@ public class Features {
         "cutt.ly", "is.gd", "ow.ly", "rebrand.ly", "shorturl.at", "tiny.cc", "rb.gy"));
 
     public static double[] extract(String raw) {
-        String url = raw.trim().toLowerCase();
-        int https = 0;
+        String url = raw.trim().toLowerCase().replaceFirst("^https?://", "");
         String rest = url;
-        if (url.startsWith("https://")) { https = 1; rest = url.substring(8); }
-        else if (url.startsWith("http://")) { rest = url.substring(7); }
         int cut = rest.length();
         for (char c : new char[]{'/', '?', '#'}) { int i = rest.indexOf(c); if (i >= 0 && i < cut) cut = i; }
         String host = rest.substring(0, cut);
@@ -43,13 +40,12 @@ public class Features {
         f[7] = hasAt;
         f[8] = pathq.contains("//") ? 1 : 0;
         f[9] = countAny(url, "?=&%_~");
-        f[10] = https;
-        f[11] = susp;
-        f[12] = BAD_TLD.contains(tld) ? 1 : 0;
-        f[13] = SHORT.contains(host) ? 1 : 0;
-        f[14] = pathq.length();
-        f[15] = entropy(host);
-        f[16] = host.isEmpty() ? 0 : (double) countDigits(host) / host.length();
+        f[10] = susp;
+        f[11] = BAD_TLD.contains(tld) ? 1 : 0;
+        f[12] = SHORT.contains(host) ? 1 : 0;
+        f[13] = pathq.length();
+        f[14] = entropy(host);
+        f[15] = host.isEmpty() ? 0 : (double) countDigits(host) / host.length();
         return f;
     }
 
@@ -66,7 +62,7 @@ public class Features {
     }
 
     public static void main(String[] a) {
-        String[] demo = {"https://www.google.com/", "http://absher-verify.xyz/login", "http://192.168.1.10/secure/update.php"};
+        String[] demo = {"www.google.com/", "https://www.google.com/", "http://absher-verify.xyz/login", "http://192.168.1.10/secure/update.php"};
         for (String u : demo) System.out.println(u + " -> " + Arrays.toString(extract(u)));
     }
 }

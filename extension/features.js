@@ -1,5 +1,5 @@
 const Sayyad_NAMES = ["url_len", "host_len", "n_dots", "n_hyphens", "n_digits", "n_subdomains", "is_ip", "has_at",
-  "dbl_slash", "n_special", "is_https", "n_susp", "bad_tld", "shortener", "path_len", "host_entropy", "digit_ratio_host"];
+  "dbl_slash", "n_special", "n_susp", "bad_tld", "shortener", "path_len", "host_entropy", "digit_ratio_host"];
 const Sayyad_SUSP = ["login", "signin", "sign-in", "verify", "verification", "secure", "security", "account", "update",
   "confirm", "password", "bank", "free", "bonus", "gift", "win", "prize", "alert", "urgent", "suspend", "unlock",
   "wallet", "invoice", "payment", "pay", "otp", "support"];
@@ -9,10 +9,8 @@ const Sayyad_SHORT = new Set(["bit.ly", "tinyurl.com", "t.co", "goo.gl", "cutt.l
   "shorturl.at", "tiny.cc", "rb.gy"]);
 
 function SayyadFeatures(raw) {
-  const url = String(raw).trim().toLowerCase();
-  let https = 0, rest = url;
-  if (url.startsWith("https://")) { https = 1; rest = url.slice(8); }
-  else if (url.startsWith("http://")) { rest = url.slice(7); }
+  const url = String(raw).trim().toLowerCase().replace(/^https?:\/\//, "");
+  let rest = url;
   let cut = rest.length;
   for (const c of ["/", "?", "#"]) { const i = rest.indexOf(c); if (i >= 0 && i < cut) cut = i; }
   let host = rest.slice(0, cut);
@@ -36,7 +34,7 @@ function SayyadFeatures(raw) {
   return [
     url.length, host.length, count(host, "."), count(host, "-"), digits(url), Math.max(0, labels.length - 2),
     /^\d{1,3}(\.\d{1,3}){3}$/.test(host) ? 1 : 0, hasAt, pathq.includes("//") ? 1 : 0, countAny(url, "?=&%_~"),
-    https, susp, Sayyad_BAD_TLD.has(tld) ? 1 : 0, Sayyad_SHORT.has(host) ? 1 : 0, pathq.length, entropy(host),
+    susp, Sayyad_BAD_TLD.has(tld) ? 1 : 0, Sayyad_SHORT.has(host) ? 1 : 0, pathq.length, entropy(host),
     host ? digits(host) / host.length : 0
   ];
 }
