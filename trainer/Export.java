@@ -20,8 +20,11 @@ public class Export{
         StringBuilder js = new StringBuilder();
         js.append("const SAYYED_MODEL = {\n features: [");
         for (String n : Features.NAMES) js.append('"').append(n).append("\", ");
+               js.append("],\n intercept: ").append(c[0][0]).append(",\n weights: [");
+        for (int j = 1; j < c.length; j++) js.append(c[j][0]).append(", ");
         js.append("]\n};\n");
-        js.append("function SayyadScore(url) {\n const s = SayyadFeatures(url);\n let z =SAYYED_MODEL.intercept:\n}");
+        js.append("function SayyadScore(url) {\n const f = SayyadFeatures(url);\n let z = SAYYED_MODEL.intercept;\n");
+        js.append(" for (let i = 0; i < f.length; i++) z += SAYYED_MODEL.weights[i] * f[i];\n");
         js.append(" return 1 / (1 + Math.exp(-z));\n}\n");
         try (PrintWriter w = new PrintWriter("../extension/model.js")) {w.print(js); };
         
@@ -44,7 +47,7 @@ public class Export{
             for (int j = 0; j < f.length; j++) z += c[j +1][0] * f[j];
             double manual = 1 / (1+ Math.exp(-z));
             for (int j = 0; j < f.length; j++) z += c[j + 1][0] * f[j];
-            System.out.printf("%.4f  %.4f  %s%n,", weka, manual, u);
+            System.out.printf("%.4f  %.4f  %s%n", weka, manual, u);        
         }
     }
 }
