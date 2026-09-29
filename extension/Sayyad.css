@@ -1,0 +1,5 @@
+#Sayyad-banner { position: sticky; top: 0; z-index: 2147483647; background: #C8102E; color: #fff;
+  font: 15px/1.4 system-ui, sans-serif; padding: 10px 16px; }
+#Sayyad-banner button { margin-left: 12px; padding: 4px 10px; border: 0; border-radius: 4px;
+  background: #fff; color: #C8102E; font-weight: 600; cursor: pointer; }
+.Sayyad-risky { outline: 2px solid #C8102E !important; background: #FBE9E4 !important; border-radius: 3px; }
