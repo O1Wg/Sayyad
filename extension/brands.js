@@ -21,3 +21,17 @@ function SayyadBrandCheck(host) {
   }
   return null;
 }
+const Sayyad_TRUSTED = [
+  "google.com", "google.com.sa", "youtube.com", "gmail.com",
+  "microsoft.com", "live.com", "office.com", "apple.com", "icloud.com",
+  "github.com", "paypal.com", "amazon.com", "amazon.sa",
+  "x.com", "twitter.com", "instagram.com", "facebook.com", "whatsapp.com",
+  "snapchat.com", "tiktok.com", "linkedin.com", "wikipedia.org",
+  "netflix.com", "stackoverflow.com", "gov.sa", "edu.sa"
+];
+
+function SayyadTrusted(host) {
+  host = String(host || "").toLowerCase();
+  const known = Sayyad_TRUSTED.concat(...Object.values(Sayyad_BRANDS));
+  return known.some(d => host === d || host.endsWith("." + d));
+}

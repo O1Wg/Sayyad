@@ -3,7 +3,7 @@ function render(url) {
   document.getElementById("url").textContent = url;
   document.getElementById("score").textContent = Math.round(v.p * 100) + "%";
   const verdict = document.getElementById("verdict");
-  verdict.textContent = v.risky ? "Looks like phishing" : "Looks fine";
+  verdict.textContent = v.risky ? "Looks like phishing" : (v.trusted ? "Known site" : "Looks fine");
   verdict.className = v.risky ? "bad" : "good";
   const ul = document.getElementById("reasons");
   ul.innerHTML = "";

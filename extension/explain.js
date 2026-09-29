@@ -21,7 +21,9 @@ function SayyadHost(url) {
 }
 
 function SayyadVerdict(url) {
+  const host = SayyadHost(url);
   const p = SayyadScore(url);
-  const brand = SayyadBrandCheck(SayyadHost(url));
-  return { p, brand, risky: p >= 0.9 || !!brand };
+  const brand = SayyadBrandCheck(host);
+  const trusted = SayyadTrusted(host);
+  return { p, brand, trusted, risky: !trusted && (p >= 0.9 || !!brand) };
 }
