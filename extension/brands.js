@@ -21,6 +21,7 @@ function SayyadBrandCheck(host) {
   }
   return null;
 }
+// this is a list of known trusted domains, including major tech companies and government/educational institutions in Saudi Arabia. The SayyadTrusted function checks if a given host is in this trusted list or matches any of the known brands' domains.
 const Sayyad_TRUSTED = [
   "google.com", "google.com.sa", "youtube.com", "gmail.com",
   "microsoft.com", "live.com", "office.com", "apple.com", "icloud.com",
