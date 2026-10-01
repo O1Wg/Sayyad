@@ -1,15 +1,15 @@
 # Safe
-http://www.google.com    Safe
 https://www.absher.sa    Safe
-https://tuwaiq.edu.sa    Safe
-https://dga.gov.sa       Safe
-https://www.moi.gov.sa   Safe
-https://www.moe.gov.sa   Safe
-https://www.hrsd.gov.sa  Safe
-https://www.mofa.gov.sa  Safe
-https://mod.gov.sa       Safe
-https://ta.sdaia.gov.sa  Safe
-https://www.amazon.sa    Safe
+https://www.iam.gov.sa/sso    Safe
+https://infath.gov.sa/ar   Safe
+https://www.seha.gov.sa       Safe
+https://noor.moe.gov.sa   Safe
+https://www.stc.com.sa   Safe
+https://www.mobily.com.sa  Safe
+https://balady.gov.sa/ar  Safe
+https://www.alinma.com/en      Safe
+https://splonline.com.sa/en  Safe
+https://www.alrajhibank.com.sa   Safe
 
 # Phishing
 http://192.168.1.1/absher/login.php           Phishing
