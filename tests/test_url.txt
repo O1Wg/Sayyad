@@ -10,7 +10,7 @@ https://balady.gov.sa/ar  Safe
 https://www.alinma.com/en      Safe
 https://splonline.com.sa/en  Safe
 https://www.alrajhibank.com.sa   Safe
-
+Results 0/10
 # Phishing
 http://192.168.1.1/absher/login.php           Phishing
 http://absher-verify.xyz/confirm              Phishing
@@ -23,3 +23,4 @@ http://alrajhi-bank.secure-login.top          Phishing
 https://www.google.com@phishing-site.ru       Phishing
 http://bit.ly/2xKpLmQ                         Phishing
 http://xn--absher-9db.com/login               Phishing
+Results 10/10
