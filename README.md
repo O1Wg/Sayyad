@@ -3,6 +3,9 @@
 A Chrome extension that warns you about phishing links before you click. Everything runs in your browser; nothing is sent to a server.
  
 *Sayyad* means "the fisherman" in Arabic: phishers fish for passwords, and Sayyad catches their links.
+
+Here's a video demnstration of the project:
+[![Sayyad Project (مشروع صيّاد)](https://img.youtube.com/vi/JbLUng9pQCk/hqdefault.jpg)](https://www.youtube.com/watch?v=JbLUng9pQCk)
  
 ## What it does
  
