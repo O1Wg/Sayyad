@@ -20,17 +20,7 @@
 *Sayyad* means "the fisherman" in Arabic: phishers fish for passwords, and Sayyad catches their links.
 
 ## Demo
-
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=JbLUng9pQCk">
-    <img src="assets/thumbnail.png" alt="Sayyad demo video (مشروع صيّاد)" width="720">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=JbLUng9pQCk"><b>▶ Watch the demo on YouTube</b></a><br>
-  <sub>What phishing is and how it happens, then Sayyad catching it live, with its test results.</sub>
-</p>
+<img src="https://img.youtube.com/vi/JbLUng9pQCk/hqdefault.jpg" alt="Sayyad demo video" width="720">
 
 ## What it does
 
